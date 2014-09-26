@@ -1,0 +1,449 @@
+@charset "CP850";
+/* line 17, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/****************************************************************************
+	978 Grid Layout (Responisive + BreakPoints) eperez.net
+	v1.0.3
+	Last Updated: 20-08-2014
+	Author: Eduardo Perez - http://eperez.net
+*****************************************************************************/
+/*************************************************************************
+ * 1. Desktop
+ **************************************************************************/
+/* line 17, ../sass/_framework.scss */
+div.layout {
+  width: 1100px;
+  margin: 0px auto;
+  position: relative;
+}
+
+/* line 19, ../sass/_framework.scss */
+div.row {
+  height: 1%;
+}
+
+/* line 20, ../sass/_framework.scss */
+div.row-end {
+  clear: both;
+  font: 1px/1px sans-serif;
+  overflow: hidden;
+}
+
+/* line 23, ../sass/_framework.scss */
+div.col1, div.col2, div.col3, div.col4, div.col5, div.col6, div.col7, div.col8, div.col9, div.col10, div.col11, div.col12 {
+  float: left;
+  margin-left: 1.819%;
+}
+
+/* line 35, ../sass/_framework.scss */
+div.col1:first-child, div.col2:first-child, div.col3:first-child, div.col4:first-child, div.col5:first-child, div.col6:first-child, div.col7:first-child, div.col8:first-child, div.col9:first-child, div.col10:first-child, div.col11:first-child, div.col12:first-child {
+  margin-left: 0px;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col1 {
+  width: 6.66592%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col2 {
+  width: 15.15083%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col3 {
+  width: 23.63575%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col4 {
+  width: 32.12067%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col5 {
+  width: 40.60558%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col6 {
+  width: 49.0905%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col7 {
+  width: 57.57542%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col8 {
+  width: 66.06033%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col9 {
+  width: 74.54525%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col10 {
+  width: 83.03017%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col11 {
+  width: 91.51508%;
+}
+
+/* line 52, ../sass/_framework.scss */
+div.col12 {
+  width: 100%;
+}
+
+/*************************************************************************
+ * 2. Tables (Min width res 768px)
+ **************************************************************************/
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+  /* line 62, ../sass/_framework.scss */
+  div.layout {
+    width: 800px;
+  }
+}
+/*************************************************************************
+ * 3. SmartPhone (WAP3)
+ **************************************************************************/
+@media screen and (max-width: 800px) {
+  /* line 69, ../sass/_framework.scss */
+  div.layout {
+    width: 100%;
+  }
+
+  /* line 72, ../sass/_framework.scss */
+  div.col1, div.col2, div.col3, div.col4, div.col5, div.col6, div.col7, div.col8, div.col9, div.col10, div.col11, div.col12 {
+    float: none;
+    margin: 0;
+    width: 100%;
+  }
+}
+@font-face {
+  font-family: 'chunkfiveroman';
+  src: url("../fonts/chunkfive-webfont.eot");
+  src: url("../fonts/chunkfive-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/chunkfive-webfont.woff") format("woff"), url("../fonts/chunkfive-webfont.ttf") format("truetype"), url("../fonts/chunkfive-webfont.svg#chunkfiveroman") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ==========================================================================
+/* Grupo de Mixin — Eduardo Perez eperez.net
+   ========================================================================== */
+/*
+$desde= Color inicial
+$hasta= Color final
+$horientacion= si es vertical u horizontal
+$inicio= top o left
+*/
+/**************************************************************************** 
+    Declaracion de variables necesaria
+    Config de elementos comunes
+*****************************************************************************/
+/* Declaracion de variables necesaria */
+/*botones*/
+/* line 23, ../sass/_common.scss */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 29, ../sass/_common.scss */
+:focus {
+  outline: none;
+}
+
+/* line 33, ../sass/_common.scss */
+body {
+  color: #838383;
+  font-family: "Open Sans", sans-serif, arial;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 42, ../sass/_common.scss */
+h1 {
+  font-size: 55px;
+}
+
+/* line 43, ../sass/_common.scss */
+h2 {
+  font-size: 44px;
+}
+
+/* line 44, ../sass/_common.scss */
+h3 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+/* line 48, ../sass/_common.scss */
+h1, h2, h3 {
+  color: #444444;
+  margin-bottom: 30px;
+}
+
+/* line 52, ../sass/_common.scss */
+a {
+  color: #006ee3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* line 58, ../sass/_common.scss */
+p {
+  margin: 0px 0px 20px;
+  line-height: 1.52381em;
+  text-rendering: optimizelegibility;
+}
+
+/* line 64, ../sass/_common.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 69, ../sass/_common.scss */
+.contenido {
+  margin-bottom: 30px;
+}
+
+/* line 8, ../sass/_mixin.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+/* line 12, ../sass/_mixin.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/********************************************************
+Botones
+********************************************************/
+/* line 80, ../sass/_common.scss */
+.btn {
+  background: #3f8ec5;
+  border: none;
+  color: white;
+  display: block;
+  font-weight: normal;
+  max-width: 200px;
+  margin-bottom: 10px;
+  padding: 8px;
+  text-align: center;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  width: 100%;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+}
+/* line 97, ../sass/_common.scss */
+.btn:hover {
+  background: #2e6d99;
+}
+
+/* line 101, ../sass/_common.scss */
+.btn.normal2 {
+  background: #83b629;
+}
+/* line 103, ../sass/_common.scss */
+.btn.normal2:hover {
+  background: #5f841e;
+}
+
+/* line 107, ../sass/_common.scss */
+.btn.error {
+  background: #e01d1d;
+}
+/* line 109, ../sass/_common.scss */
+.btn.error:hover {
+  background: #aa1616;
+}
+
+/********************************************************
+Componentes de formularios
+********************************************************/
+/* line 117, ../sass/_common.scss */
+.filaForm {
+  margin-bottom: 10px;
+}
+/* line 119, ../sass/_common.scss */
+.filaForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+/* line 123, ../sass/_common.scss */
+.filaForm input[type="text"], .filaForm input[type="password"] {
+  border: #c4c4c4 solid 1px;
+  padding: 8px 5%;
+  width: 89%;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+}
+/* line 129, ../sass/_common.scss */
+.filaForm .select {
+  background: white url(../img/icons/icon-arrow-down.png) 98% center no-repeat;
+  border: #c4c4c4 solid 1px;
+  width: 99%;
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+}
+/* line 135, ../sass/_common.scss */
+.filaForm .select select {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 7px 5%;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/*********************************************************
+Manejo de Imagenes
+*********************************************************/
+/* line 151, ../sass/_common.scss */
+.imgWrapper {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+}
+/* line 156, ../sass/_common.scss */
+.imgWrapper img {
+  height: 250px;
+  width: auto;
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  z-index: 1;
+}
+
+/* line 168, ../sass/_common.scss */
+.imgWrapperBig {
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+}
+/* line 172, ../sass/_common.scss */
+.imgWrapperBig img {
+  height: auto;
+  max-width: 100%;
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  z-index: 1;
+}
+
+/****************************************************************************
+	Header.scss
+	Se ubican los estilos de la cabeza de lsitio web
+*****************************************************************************/
+/* line 5, ../sass/_header.scss */
+.header-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/**************************************************************************
+Configuracion para los Breakpoints
+**************************************************************************/
+/*******************TABLETS***********************************************/
+/*******************SMARTPHONES******************************************/
+/****************************************************************************
+	footer.scss
+	Se ubican los estilos del pie de página del sitio web
+*****************************************************************************/
+/**************************************************************************
+Configuracion para los Breakpoints
+**************************************************************************/
+/*******************SMARTPHONES******************************************/

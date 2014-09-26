@@ -1,0 +1,250 @@
+/* ==========================================================================
+/* Grupo de Mixin — Eduardo Perez eperez.net
+   ========================================================================== */
+
+// Mixin para el clearfix
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Mixin de margenes
+@mixin margin($igual:false, $pos:false, $ancho:false){
+	//$igual=0 NO, $igual=1 SI
+	@if $igual == 0 {
+		// 1=top, 2=right, 3=bottom, 4=left
+		@if $pos == 1 {
+			margin-top    : $ancho;
+		}
+		@else if $pos == 2 {
+			margin-right  : $ancho;
+		}
+		@else if $pos == 3 {
+			margin-bottom : $ancho;
+		}
+		@else {
+			margin-left   : $ancho;
+		}
+	}
+	// si todos los border son igual ($igual==1)
+	@if $igual == 1 {
+		margin: $ancho;
+	}
+
+}
+// Margin con Shorthand
+@mixin margin-sh($top , $right, $bottom, $left){
+	margin : $top $right $bottom $left;
+}
+
+// Mixin de padding
+@mixin padding($igual:false, $pos:false, $ancho:false){
+	//$igual=0 NO, $igual=1 SI
+	@if $igual == 0 {
+		// 1=top, 2=right, 3=bottom, 4=left
+		@if $pos == 1 {
+			padding-top    : $ancho;
+		}
+		@else if $pos == 2 {
+			padding-right  : $ancho;
+		}
+		@else if $pos == 3 {
+			padding-bottom : $ancho;
+		}
+		@else {
+			padding-left   : $ancho;
+		}
+	}
+	// si todos los border son igual ($igual==1)
+	@if $igual == 1 {
+		padding: $ancho;
+	}
+
+}
+// Padding con Shorthand
+@mixin padding-sh($top  , $right, $bottom, $left){
+	padding         : $top $right $bottom $left;
+}
+
+// Mixin Border
+@mixin border($igual:false, $pos:false, $grosor:false, $color:false, $tipo:false){
+	//$igual=0 NO, $igual=1 SI
+	@if $igual == 0 {
+		// 1=top, 2=right, 3=bottom, 4=left
+		@if $pos == 1 {
+			border-top    : $grosor $color $tipo;
+		}
+		@else if $pos == 2 {
+			border-right  : $grosor $color $tipo;
+		}
+		@else if $pos == 3 {
+			border-bottom : $grosor $color $tipo;
+		}
+		@else {
+			border-left   : $grosor $color $tipo;
+		}
+	}
+	// si todos los border son igual ($igual==1)
+	@if $igual == 1 {
+		border: $grosor $color $tipo;
+	}
+
+}
+
+// Border radius
+@mixin border-radius($radius) {
+  -webkit-border-radius              : $radius;
+  border-radius                      : $radius;
+  background-clip                    : padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// Single side border-radius
+@mixin border-topLeft-radius($radius) {
+  -webkit-border-top-left-radius     : $radius;
+  border-top-left-radius             : $radius;
+  background-clip                    : padding-box;
+}
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius    : $radius;
+  border-top-right-radius            : $radius;
+  -webkit-border-top-left-radius     : $radius;
+  border-top-left-radius             : $radius;
+  background-clip                    : padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius : $radius;
+  border-bottom-right-radius         : $radius;
+  -webkit-border-top-right-radius    : $radius;
+  border-top-right-radius            : $radius;
+  background-clip                    : padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius : $radius;
+  border-bottom-right-radius         : $radius;
+  -webkit-border-bottom-left-radius  : $radius;
+  border-bottom-left-radius          : $radius;
+  background-clip                    : padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius  : $radius;
+  border-bottom-left-radius          : $radius;
+  -webkit-border-top-left-radius     : $radius;
+  border-top-left-radius             : $radius;
+  background-clip                    : padding-box;
+}
+
+// Degrades
+@mixin degrade($desde, $hasta) {
+  /* fallback/image non-cover color */
+  background-color : $desde;
+ 
+  /* Firefox 3.6+ */
+  background-image : -moz-linear-gradient($desde, $hasta);
+ 
+  /* Safari 4+, Chrome 1+ */
+  background-image : -webkit-gradient(linear, 0% 0%, 0% 100%, from($desde), to($hasta));
+ 
+  /* Safari 5.1+, Chrome 10+ */
+  background-image : -webkit-linear-gradient($desde, $hasta);
+ 
+  /* Opera 11.10+ */
+  background-image : -o-linear-gradient($desde, $hasta);
+
+  /* IE */
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$desde}', endColorstr='#{$hasta}');
+}
+
+/*
+$desde= Color inicial
+$hasta= Color final
+$horientacion= si es vertical u horizontal
+$inicio= top o left
+*/
+@mixin miDegrade($desde, $hasta, $horientacion, $inicio){
+	// needs latest Compass, add '@import "compass"' to your scss
+	background-color: $desde; // Old browsers
+	@include filter-gradient($desde, $hasta,  $horientacion); // IE6-8
+	// IE9 SVG, needs conditional override of 'filter' to 'none'
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient($inicio,  $desde 0%,$hasta 100%));
+
+
+
+}
+
+// Opacity
+@mixin opacity($value) {
+	opacity: #{"." + $value};
+	filter: alpha(opacity=$value);
+	-ms-filter: "alpha(opacity=$value)";
+	-khtml-opacity: #{"." + $value};
+	-moz-opacity: #{"." + $value};
+}
+
+// Botones
+@mixin boton($color, $icon:false){
+
+	
+	//Configurar icono
+	@if $icon=="login"{
+		background : $color url(../img/icons/login.png) 5px center no-repeat;
+		@include padding(0, 4, 25px);
+	}
+	@if $icon=="publicar"{
+		background : $color url(../img/icons/publicar.png) 5px center no-repeat;
+		@include padding(0, 4, 25px);
+	}
+
+}
+
+
+@mixin sombraTiles(){
+	-webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.3);
+	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.3);
+}
+
+@mixin imagenResize($alto, $ancho){
+	height: $alto;
+	width: $ancho;
+}
+
+@mixin alpha($color, $opacity: 0.9) {
+	
+	$red: red($color);
+	$green: green($color);
+	$blue: blue($color);
+    background: $color; /* The Fallback */
+
+    background: rgba($color, $opacity);
+
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=$color, endColorstr=$color);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=$color, endColorstr=$color)";
+}
+
+// @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+// 	@if $inset {
+// 		-webkit-box-shadow : inset $top $left $blur $color;
+// 		-moz-box-shadow    : inset $top $left $blur $color;
+// 		box-shadow         : inset $top $left $blur $color;
+// 	} @else {
+// 		-webkit-box-shadow : $top $left $blur $color;
+// 		-moz-box-shadow    : $top $left $blur $color;
+// 		box-shadow         : $top $left $blur $color;
+// 	}
+// }
+
+@mixin boxShadow($x: 1px,$y: 1px,$blur: 5px,$color: #000){
+	-webkit-box-shadow : $x $y $blur $color;
+	-moz-box-shadow    : $x $y $blur $color;
+	box-shadow         : $x $y $blur $color;
+}
+	

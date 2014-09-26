@@ -1,0 +1,83 @@
+/****************************************************************************
+	978 Grid Layout (Responisive + BreakPoints) eperez.net
+	v1.0.3
+	Last Updated: 20-08-2014
+	Author: Eduardo Perez - http://eperez.net
+*****************************************************************************/
+
+/*************************************************************************
+ * 1. Desktop
+ **************************************************************************/
+
+//Config 
+$widthGrid : 1100px; //Grid width
+$numCols   : 12; // Number of columns
+$gutter: 1.819%; //margin left for each columns
+
+div.layout { width: $widthGrid; margin: 0px auto; position: relative; }
+
+div.row { height: 1%; }
+div.row-end { clear: both; font: 1px/1px sans-serif; overflow: hidden; }
+
+// Determina las propiedades que contienen las columnas
+%selectorCol {
+	float: left; 
+	margin-left: $gutter;
+}
+
+@for $i from 1 through $numCols {
+	div.col#{$i}{
+		@extend	%selectorCol;
+	}
+}
+
+//Primera columna de cada fila, debe tener el margin-left en 0
+%margin-firstChild {
+	margin-left: 0px;
+}
+
+@for $i from 1 through $numCols {
+	div.col#{$i}:first-child{
+		@extend	%margin-firstChild;
+	}
+}
+
+$one_col: (100% - ($gutter * ($numCols - 1))) / $numCols;
+ 
+@mixin cols($num) {
+	width: ($one_col * $num) + ($gutter * ($num - 1));
+}
+
+@for $i from 1 through $numCols {
+	div.col#{$i}{
+		@include cols($i);
+	}
+}
+
+
+/*************************************************************************
+ * 2. Tables (Min width res 768px)
+ **************************************************************************/
+@include screen(801px, 1024px){
+	div.layout { width  : 800px; }
+}
+
+/*************************************************************************
+ * 3. SmartPhone (WAP3)
+ **************************************************************************/
+@include max-screen(800px){
+	div.layout { width: 100%; }
+	
+	// Determina las propiedades que contienen las columnas
+	%selectorColMobile {
+		float: none; 
+		margin: 0;
+		width: 100.00%
+	}
+
+	@for $i from 1 through $numCols {
+		div.col#{$i}{
+			@extend	%selectorColMobile;
+		}
+	}
+}
