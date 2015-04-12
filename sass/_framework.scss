@@ -14,10 +14,28 @@ $widthGrid : 1100px; //Grid width
 $numCols   : 12; // Number of columns
 $gutter: 1.819%; //margin left for each columns
 
-div.layout { width: $widthGrid; margin: 0px auto; position: relative; }
+.layout { 
+	width: $widthGrid; 
+	margin: 0px auto; 
+	position: relative; 
+}
+.fluid-layout{
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
-div.row { height: 1%; }
-div.row-end { clear: both; font: 1px/1px sans-serif; overflow: hidden; }
+.row { 
+	height: 1%;
+}
+
+.layout, .fluid-layout, .row{
+	&:before, &:after{
+		display: table;
+  		content: " ";
+	}
+}
 
 // Determina las propiedades que contienen las columnas
 %selectorCol {
