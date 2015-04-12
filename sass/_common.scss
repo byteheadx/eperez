@@ -6,20 +6,6 @@
 /* Declaracion de variables necesaria */
 
 
-// Paleta de colores
-$colorHead        :#444444;
-$colorCopy        :#555555;
-$colorLink        :#006ee3;
-$colorBlanco      :#ffffff;
-/*botones*/
-$colorNormal      :#3f8ec5;
-$colorNormal2     :#83b629;
-$colorError       :#e01d1d;
-
-// Enlaces
-
-// Texto h1, p, etc
-
 html { 
     -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale; 
@@ -39,32 +25,6 @@ body{
 }
 
 
-h1{ font-size: 55px; }
-h2{ font-size: 44px; }
-h3{ 
-    font-size: 32px;
-    font-weight: 600; 
-}
-h1, h2, h3{
-    color: $colorHead; 
-    margin-bottom: 30px; 
-}
-a{
-    color: $colorLink;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-p {
-    margin: 0px 0px 20px;
-    line-height: 1.52381em;
-    text-rendering: optimizelegibility;
-}
-
-strong {
-    font-weight: bold;
-}
-
 //////////////////////////////////////////////////////////////////////////////
 .contenido{
    margin-bottom: 30px;
@@ -74,76 +34,7 @@ strong {
    @include clearfix();
 }
 
-/********************************************************
-Botones
-********************************************************/
-.btn{
-    background: $colorNormal;
-    border: none;
-    color: $colorBlanco;
-    display: block;
-    font-weight: normal;
-    max-width: 200px;
-    margin-bottom: 10px;
-    padding: 8px;
-    text-align: center;
-    text-transform: none;
-    transition: all 0.3s ease 0s;
-    width: 100%;
-    -moz-transition: all 0.3s ease 0s;
-    -webkit-transition: all 0.3s ease 0s;
-    @include border-radius(3px);
 
-    &:hover {
-        background: darken($colorNormal, 12%);
-    } 
-}
-.btn.normal2{
-    background: $colorNormal2;
-    &:hover {
-        background: darken($colorNormal2, 12%);
-    } 
-}
-.btn.error{ 
-    background: $colorError; 
-    &:hover {
-        background: darken($colorError, 12%);
-    } 
-}
-
-/********************************************************
-Componentes de formularios
-********************************************************/
-.filaForm{
-    margin-bottom: 10px;
-    label{
-        display: block;
-        margin-bottom: 5px;
-    }
-    input[type="text"], input[type="password"]{
-        border: lighten($colorHead, 50%) solid 1px;
-        padding: 8px 5%;
-        width: 89%;
-        @include border-radius(3px);
-    }
-    .select{
-        background: white url(../img/icons/icon-arrow-down.png) 98% center no-repeat;
-        border: lighten($colorHead, 50%) solid 1px;
-        width: 99%;
-        overflow: hidden;
-        @include border-radius(3px);
-        select{
-            appearance: none;
-            background: transparent;
-            border: none;
-            padding: 7px 5%;
-            width: 100%;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-        }
-    }
-   
-}
 
 /*********************************************************
 Manejo de Imagenes
@@ -180,4 +71,15 @@ Manejo de Imagenes
         margin: auto;
         z-index: 1;
     }
+}
+
+/*********************************************************
+Code container
+*********************************************************/
+.code-container{
+    background: lighten($colorHead, 70%);
+    border:  lighten($colorHead, 60%) solid 1px;
+    padding: 5px;
+    margin-bottom: 10px;
+    @include border-radius(5px); 
 }

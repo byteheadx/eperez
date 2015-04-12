@@ -1,0 +1,75 @@
+/**************************************************************************** 
+    Declaracion de variables necesaria para formularios
+    Config de elementos comunes
+*****************************************************************************/
+
+/********************************************************
+Botones
+********************************************************/
+.btn{
+    background: $colorNormal;
+    border: none;
+    color: $colorBlanco;
+    display: block;
+    font-weight: normal;
+    max-width: 200px;
+    margin-bottom: 10px;
+    padding: 8px;
+    text-align: center;
+    text-transform: none;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    -moz-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    @include border-radius(3px);
+
+    &:hover {
+        background: darken($colorNormal, 12%);
+    } 
+}
+.btn.normal2{
+    background: $colorNormal2;
+    &:hover {
+        background: darken($colorNormal2, 12%);
+    } 
+}
+.btn.error{ 
+    background: $colorError; 
+    &:hover {
+        background: darken($colorError, 12%);
+    } 
+}
+
+/********************************************************
+Componentes de formularios
+********************************************************/
+.filaForm{
+    margin-bottom: 10px;
+    label{
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"], input[type="password"]{
+        border: lighten($colorHead, 50%) solid 1px;
+        padding: 8px 5%;
+        width: 89%;
+        @include border-radius(3px);
+    }
+    .select{
+        background: white url(../img/icons/icon-arrow-down.png) 98% center no-repeat;
+        border: lighten($colorHead, 50%) solid 1px;
+        width: 99%;
+        overflow: hidden;
+        @include border-radius(3px);
+        select{
+            appearance: none;
+            background: transparent;
+            border: none;
+            padding: 7px 5%;
+            width: 100%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+    }
+   
+}
