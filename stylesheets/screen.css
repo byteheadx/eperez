@@ -335,7 +335,7 @@ Manejo de Imagenes
 /*********************************************************
 Code container
 *********************************************************/
-.code-container {
+code {
   background: #f7f7f7;
   border: #dddddd solid 1px;
   padding: 5px;
