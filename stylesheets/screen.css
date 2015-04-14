@@ -155,21 +155,115 @@ $inicio= top o left
 /* Declaracion de variables necesaria */
 /*botones*/
 /**************************************************************************** 
+    Declaracion de variables necesaria
+    Config de elementos comunes
+*****************************************************************************/
+/* Declaracion de variables necesaria */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility; }
+
+:focus {
+  outline: none; }
+
+body {
+  color: #555555;
+  font-family: "Open Sans", sans-serif, arial;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0; }
+
+.contenido {
+  margin-bottom: 30px; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+.clearfix:after {
+  clear: both; }
+
+/*********************************************************
+Manejo de Imagenes
+*********************************************************/
+.imgWrapper {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */ }
+  .imgWrapper img {
+    height: 250px;
+    width: auto;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    z-index: 1; }
+
+.imgWrapperBig {
+  height: 440px;
+  position: relative;
+  overflow: hidden; }
+  .imgWrapperBig img {
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    z-index: 1; }
+
+/*********************************************************
+Code container
+*********************************************************/
+code {
+  background: #f7f7f7;
+  border: #dddddd solid 1px;
+  padding: 5px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */ }
+
+/**************************************************************************** 
     Declaracion de variables necesaria para las fuentes y letras
     Config de elementos comunes
 *****************************************************************************/
+h1, h2, h3, h4, h5 {
+  color: #444444;
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: -1px; }
+
 h1 {
-  font-size: 55px; }
+  font-size: 4.5em; }
 
 h2 {
-  font-size: 44px; }
+  font-size: 3.4em; }
 
 h3 {
-  font-size: 32px;
-  font-weight: 600; }
+  font-size: 2.4em;
+  letter-spacing: 0; }
 
-h1, h2, h3 {
-  color: #444444; }
+h4 {
+  font-size: 2em;
+  letter-spacing: 0;
+  font-weight: 500; }
+
+h5 {
+  font-size: 1.5em; }
+
+h6 {
+  font-size: 1.3em;
+  font-weight: 500; }
 
 h1 {
   margin-bottom: 30px; }
@@ -179,6 +273,13 @@ h2 {
 
 h3, h4, h5, h6 {
   margin-bottom: 10px; }
+
+p {
+  font-size: 1.6em;
+  line-height: 20px;
+  margin-bottom: 14px;
+  letter-spacing: 0;
+  font-weight: 400; }
 
 a {
   color: #006ee3;
@@ -265,85 +366,6 @@ Componentes de formularios
       width: 100%;
       -webkit-appearance: none;
       -moz-appearance: none; }
-
-/**************************************************************************** 
-    Declaracion de variables necesaria
-    Config de elementos comunes
-*****************************************************************************/
-/* Declaracion de variables necesaria */
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility; }
-
-:focus {
-  outline: none; }
-
-body {
-  color: #555555;
-  font-family: "Open Sans", sans-serif, arial;
-  font-size: 16px;
-  margin: 0;
-  padding: 0; }
-
-.contenido {
-  margin-bottom: 30px; }
-
-.clearfix:before, .clearfix:after {
-  content: "";
-  display: table; }
-.clearfix:after {
-  clear: both; }
-
-/*********************************************************
-Manejo de Imagenes
-*********************************************************/
-.imgWrapper {
-  height: 250px;
-  position: relative;
-  overflow: hidden;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */ }
-  .imgWrapper img {
-    height: 250px;
-    width: auto;
-    position: absolute;
-    top: -9999px;
-    bottom: -9999px;
-    left: -9999px;
-    right: -9999px;
-    margin: auto;
-    z-index: 1; }
-
-.imgWrapperBig {
-  height: 440px;
-  position: relative;
-  overflow: hidden; }
-  .imgWrapperBig img {
-    height: auto;
-    max-width: 100%;
-    position: absolute;
-    top: -9999px;
-    bottom: -9999px;
-    left: -9999px;
-    right: -9999px;
-    margin: auto;
-    z-index: 1; }
-
-/*********************************************************
-Code container
-*********************************************************/
-code {
-  background: #f7f7f7;
-  border: #dddddd solid 1px;
-  padding: 5px;
-  margin-bottom: 10px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */ }
 
 /****************************************************************************
 	Header.scss
